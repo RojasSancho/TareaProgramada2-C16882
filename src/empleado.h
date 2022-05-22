@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class Empleado {
 
     public:
     virtual ~Empleado();
+    Empleado();
 
     virtual float CalcularPagoNeto() = 0;
 
