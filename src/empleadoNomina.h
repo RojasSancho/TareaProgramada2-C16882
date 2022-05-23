@@ -14,10 +14,9 @@ class EmpleadoNomina : public Empleado {
     public:
     
     EmpleadoNomina(int id, string nombre, string apellido, string email, int tipoEmpleado, int idSupervisor);
+    EmpleadoNomina(float pagoMensualBruto);
 
-    virtual float CalculoPagoNeto();
-
-    virtual void DarPagoMensualBruto(float pagoMensualBruto);
+    virtual float CalcularPagoNeto();
 
 };
 

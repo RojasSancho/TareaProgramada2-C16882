@@ -20,7 +20,6 @@ class Empleado {
 
     public:
     virtual ~Empleado();
-    Empleado();
 
     virtual float CalcularPagoNeto() = 0;
 
