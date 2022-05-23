@@ -13,10 +13,13 @@ class Planilla {
     map<int, Empleado *> indiceEmpleados;
 
     public:
-    Planilla();
+    Planilla(int idDirector, string nombreDirector, string apellidoDirector, string emailDirector, int tipoEmpleadoDirector, int idSupervisorDirector); //Informacion de la raiz, es decir, el director
+
     ~Planilla();
 
-    void AgregarEmpleado(Empleado *nuevoEmpleado);
+    void AgregarEmpleado(Empleado *Empleado);
+
+
 
     friend istream operator >> (istream &i, Planilla *planilla);
 
