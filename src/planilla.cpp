@@ -157,12 +157,6 @@ Planilla::~Planilla()
     delete this->director;
 }
 
-void Planilla::AgregarEmpleado(Empleado *empleado)
-{
-    
-
-}
-
 string Planilla::ObtenerNombre (int id)
 {
     Empleado *empleadoConNombre = this->indiceEmpleados.at(id);

@@ -10,12 +10,11 @@ all:
 		g++ -g -o bin/planillas bin/empleadoNomina.o bin/empleadoIndependientePorHoras.o bin/main.o bin/empleado.o bin/planilla.o
 test:
 		mkdir -p bin
-		g++ $(FLAGS) tests/tests_enviofedex_calculoenvio.cpp -o bin/tests_enviofedex_calculoenvio.o
-		g++ $(FLAGS) tests/tests_envioserviciopostal_calculoenvio.cpp -o bin/tests_envioserviciopostal_calculoenvio.o
-		g++ $(FLAGS) src/envio.cpp -o bin/envio.o
-		g++ $(FLAGS) src/envioFedEX.cpp -o bin/envioFedEX.o
-		g++ $(FLAGS) src/envioServicioPostal.cpp -o bin/envioServicioPostal.o
-		g++ -g -o bin/tests bin/tests_enviofedex_calculoenvio.o bin/tests_envioserviciopostal_calculoenvio.o bin/envio.o bin/envioFedEX.o bin/envioServicioPostal.o -lgtest -lgtest_main -lpthread 
-
+		g++ $(FLAGS) src/empleado.cpp -o bin/empleado.o
+		g++ $(FLAGS) src/empleadoNomina.cpp -o bin/empleadoNomina.o
+		g++ $(FLAGS) src/empleadoIndependientePorHoras.cpp -o bin/empleadoIndependientePorHoras.o
+		g++ $(FLAGS) tests/tests_empleadoindependienteporhoras_calcularpagoneto.cpp -o bin/tests_empleadoindependienteporhoras_calcularpagoneto.o
+		g++ $(FLAGS) tests/tests_empleadonomina_calcularpagoneto.cpp -o bin/tests_empleadonomina_calcularpagoneto.o
+		g++ -g -o bin/tests bin/tests_empleadoindependienteporhoras_calcularpagoneto.o bin/tests_empleadonomina_calcularpagoneto.o  bin/empleado.o bin/empleadoIndependientePorHoras.o bin/empleadoNomina.o -lgtest -lgtest_main -lpthread
 clean:
 		rm -Rf bin
