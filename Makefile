@@ -15,6 +15,7 @@ test:
 		g++ $(FLAGS) src/empleadoIndependientePorHoras.cpp -o bin/empleadoIndependientePorHoras.o
 		g++ $(FLAGS) tests/tests_empleadoindependienteporhoras_calcularpagoneto.cpp -o bin/tests_empleadoindependienteporhoras_calcularpagoneto.o
 		g++ $(FLAGS) tests/tests_empleadonomina_calcularpagoneto.cpp -o bin/tests_empleadonomina_calcularpagoneto.o
-		g++ -g -o bin/tests bin/tests_empleadoindependienteporhoras_calcularpagoneto.o bin/tests_empleadonomina_calcularpagoneto.o  bin/empleado.o bin/empleadoIndependientePorHoras.o bin/empleadoNomina.o -lgtest -lgtest_main -lpthread
+		g++ $(FLAGS) tests/tests_empleado_obteneratributos.cpp -o bin/tests_empleado_obteneratributos.o
+		g++ -g -o bin/tests bin/tests_empleadoindependienteporhoras_calcularpagoneto.o bin/tests_empleadonomina_calcularpagoneto.o bin/tests_empleado_obteneratributos.o  bin/empleado.o bin/empleadoIndependientePorHoras.o bin/empleadoNomina.o -lgtest -lgtest_main -lpthread
 clean:
 		rm -Rf bin
