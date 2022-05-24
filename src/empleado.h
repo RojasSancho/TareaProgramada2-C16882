@@ -25,10 +25,15 @@ class Empleado {
 
     virtual float CalcularPagoNeto() = 0;
 
+    void InsertarSupervisado(Empleado *supervisado);
+
+
     friend istream& operator >> (istream &i, Empleado *empleado);
     friend ostream& operator << (ostream &o, const Empleado *empleado);
 
+    void AsigneSupervisor(Empleado *supervisor);
 
+    string ObtenerNombre();
 
 };
 

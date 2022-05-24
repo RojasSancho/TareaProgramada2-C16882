@@ -3,6 +3,8 @@
 
 #include "empleado.h"
 #include <map>
+#include <istream>
+#include <string>
 
 using namespace std;
 
@@ -13,33 +15,18 @@ class Planilla {
     map<int, Empleado *> indiceEmpleados;
 
     public:
-    Planilla(int idDirector, string nombreDirector, string apellidoDirector, string emailDirector, int tipoEmpleadoDirector, int idSupervisorDirector); //Informacion de la raiz, es decir, el director
+    Planilla(istream *streamPersonas); //Informacion de la raiz, es decir, el director
 
     ~Planilla();
 
     void AgregarEmpleado(Empleado *Empleado);
 
+    string ObtenerNombre(int id);
+    
 
 
-    friend istream operator >> (istream &i, Planilla *planilla);
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif

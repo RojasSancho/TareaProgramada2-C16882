@@ -5,8 +5,9 @@ all:
 		g++ $(FLAGS) src/empleado.cpp -o bin/empleado.o
 		g++ $(FLAGS) src/empleadoNomina.cpp -o bin/empleadoNomina.o
 		g++ $(FLAGS) src/empleadoIndependientePorHoras.cpp -o bin/empleadoIndependientePorHoras.o
+		g++ $(FLAGS) src/planilla.cpp -o bin/planilla.o
 		g++ $(FLAGS) src/main.cpp -o bin/main.o
-		g++ -g -o bin/planillas bin/empleadoNomina.o bin/empleadoIndependientePorHoras.o bin/main.o bin/empleado.o
+		g++ -g -o bin/planillas bin/empleadoNomina.o bin/empleadoIndependientePorHoras.o bin/main.o bin/empleado.o bin/planilla.o
 test:
 		mkdir -p bin
 		g++ $(FLAGS) tests/tests_enviofedex_calculoenvio.cpp -o bin/tests_enviofedex_calculoenvio.o

@@ -1,8 +1,24 @@
 #include "empleado.h"
+#include <string>
+
+void Empleado::InsertarSupervisado(Empleado *supervisado)
+{
+    this->supervisados.push_back(supervisado);
+}
+
+void Empleado::AsigneSupervisor(Empleado *supervisor) 
+{
+    this->supervisor = supervisor;
+}
 
 Empleado::~Empleado()
 {
     
+}
+
+ string Empleado::ObtenerNombre()
+{
+    return this->nombre;
 }
 
 ostream& operator << (ostream &o, const Empleado *empleado)
