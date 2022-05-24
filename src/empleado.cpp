@@ -21,6 +21,16 @@ string Empleado::ObtenerNombre()
     return this->nombre;
 }
 
+void Empleado::AsignarPagoMensualBruto(float a)
+{
+
+}
+
+void Empleado::AsignarMontoPorHoraYHorasTrabajadas(float a, int b)
+{
+
+}
+
 ostream& operator << (ostream &o, const Empleado *empleado)
 {
     o << empleado->id << "," << empleado->nombre << "," << empleado->apellido << "," << empleado->email << "," << empleado->tipoEmpleado <<  "," << empleado->idSupervisor;

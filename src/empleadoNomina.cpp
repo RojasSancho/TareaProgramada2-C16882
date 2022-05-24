@@ -29,3 +29,8 @@ float EmpleadoNomina::CalcularPagoNeto()
     return pagoNeto;
 
 }
+
+void EmpleadoNomina::AsignarPagoMensualBruto(float pagoMensualBruto)
+{
+    this->pagoMensualBruto = pagoMensualBruto;
+}

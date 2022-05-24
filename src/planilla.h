@@ -19,10 +19,14 @@ class Planilla {
 
     ~Planilla();
 
+    void AgregarPagoMensualBruto(istream *streamNomina);
+    void AgregarMontoPorHoraYHorasTrabajadas(istream *streamHorasTrabajadas);
+
     void AgregarEmpleado(Empleado *Empleado);
 
     string ObtenerNombre(int id);
     
+    float ObtenerPagoNeto(int id);
 
 
 

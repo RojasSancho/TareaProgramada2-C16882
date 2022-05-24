@@ -35,6 +35,9 @@ class Empleado {
 
     string ObtenerNombre();
 
+    virtual void AsignarPagoMensualBruto(float pagoMensualBruto);
+    virtual void AsignarMontoPorHoraYHorasTrabajadas(float montoPorHora, int horasTrabajadas);
+
 };
 
 #endif

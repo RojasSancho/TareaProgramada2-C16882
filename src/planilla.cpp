@@ -59,6 +59,58 @@ Planilla::Planilla(istream *streamPersonas)
     }
 }
 
+void Planilla::AgregarPagoMensualBruto(istream *streamNomina)
+{
+    std::string linea{};
+
+    while(std::getline(*streamNomina, linea))
+    {         
+        int id = 0;
+        float pagoMensualBruto{};
+
+        string stringEntrada = linea;
+        istringstream stream(stringEntrada);
+
+        stream >> id >> pagoMensualBruto;
+
+
+        if(id <= 450) 
+        {
+            Empleado *empleadoNomina = this->indiceEmpleados.at(id);
+            empleadoNomina->AsignarPagoMensualBruto(pagoMensualBruto);
+        }
+
+    }
+
+}
+
+void Planilla::AgregarMontoPorHoraYHorasTrabajadas(istream *streamHorasTrabajadas)
+{
+    std::string linea{};
+
+    while(std::getline(*streamHorasTrabajadas, linea))
+    {         
+        int id = 0;
+        float montoPorHora{};
+        int horasTrabajadas{};
+
+        string stringEntrada = linea;
+        istringstream stream(stringEntrada);
+
+        stream >> id >> montoPorHora >> horasTrabajadas;
+
+
+        if(id > 450) 
+        {
+            Empleado *empleadoPorHoras = this->indiceEmpleados.at(id);
+            empleadoPorHoras->AsignarMontoPorHoraYHorasTrabajadas(montoPorHora, horasTrabajadas);
+        }
+
+    }
+
+}
+
+
 Planilla::~Planilla()
 {
     delete this->director;
@@ -74,4 +126,10 @@ string Planilla::ObtenerNombre (int id)
 {
     Empleado *empleadoConNombre = this->indiceEmpleados.at(id);
     return empleadoConNombre->ObtenerNombre();
+}
+
+float Planilla::ObtenerPagoNeto (int id)
+{
+    Empleado *empleado = this->indiceEmpleados.at(id);
+    return empleado->CalcularPagoNeto();
 }

@@ -33,13 +33,27 @@ int main ()
         return -1;
     }
 
+    ifstream ifs2("nomina.txt", std::ifstream::in);
+
+    if (!ifs.is_open())
+    {
+        std::cerr << "Error leyendo archivo nomina.txt" << std::endl;
+        return -1;
+    }
+
+    ifstream ifs3("horastrabajadas.txt", std::ifstream::in);
+
+    if (!ifs.is_open())
+    {
+        std::cerr << "Error leyendo archivo horastrabajdas.txt" << std::endl;
+        return -1;
+    }
+
     Planilla *planilla = new Planilla(&ifs);
+    planilla->AgregarPagoMensualBruto(&ifs2);
+    planilla->AgregarMontoPorHoraYHorasTrabajadas(&ifs3);
 
-    string nombreDelSegundo = planilla->ObtenerNombre(2);
-
-    cout << nombreDelSegundo << endl;
-
-
+    
     
 
 

@@ -18,7 +18,7 @@ class EmpleadoIndependientePorHoras : public Empleado {
     EmpleadoIndependientePorHoras(float montoPorHora, int horasTrabajadasEnMes);
     virtual float CalcularPagoNeto();
 
-
+    void AsignarMontoPorHoraYHorasTrabajadas(float montoPorHora, int horasTrabajadas);
 
 
 };

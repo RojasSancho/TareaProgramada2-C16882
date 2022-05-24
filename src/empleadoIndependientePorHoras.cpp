@@ -25,3 +25,9 @@ float EmpleadoIndependientePorHoras::CalcularPagoNeto()
     pagoNeto = this->horasTrabajadasEnMes * this->montoPorHora;
     return pagoNeto;
 }
+
+void EmpleadoIndependientePorHoras::AsignarMontoPorHoraYHorasTrabajadas(float montoPorHora, int horasTrabajadas)
+{
+    this->montoPorHora = montoPorHora;
+    this->horasTrabajadasEnMes = horasTrabajadas;
+}
