@@ -16,7 +16,7 @@ Empleado::~Empleado()
     
 }
 
- string Empleado::ObtenerNombre()
+string Empleado::ObtenerNombre()
 {
     return this->nombre;
 }

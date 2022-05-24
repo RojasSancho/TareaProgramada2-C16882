@@ -37,7 +37,7 @@ int main ()
 
     string nombreDelSegundo = planilla->ObtenerNombre(2);
 
-    cout << nombreDelSegundo;
+    cout << nombreDelSegundo << endl;
 
 
     
