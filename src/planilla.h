@@ -28,7 +28,7 @@ class Planilla {
     
     float ObtenerPagoNeto(int id);
 
-
+    void CrearReporte();
 
 };
 

@@ -21,6 +21,16 @@ string Empleado::ObtenerNombre()
     return this->nombre;
 }
 
+string Empleado::ObtenerApellido()
+{
+    return this->apellido;
+}
+
+string Empleado::ObtenerNombreCompletoSupervisor()
+{
+    return this->supervisor->nombre + " " + this->supervisor->apellido;
+}
+
 void Empleado::AsignarPagoMensualBruto(float a)
 {
 

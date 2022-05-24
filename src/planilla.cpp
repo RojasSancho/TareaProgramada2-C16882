@@ -110,6 +110,22 @@ void Planilla::AgregarMontoPorHoraYHorasTrabajadas(istream *streamHorasTrabajada
 
 }
 
+void Planilla::CrearReporte()
+{
+    ofstream reporte("reporte.csv", std::ifstream::out);
+    
+    if (!reporte.is_open())
+    {
+        std::cerr << "Error abriendo reporte.csv" << std::endl;
+    }
+
+    for(int i = 1; i <= 600; i++)
+    {
+        Empleado *empleado = this->indiceEmpleados.at(i);
+        reporte << i << empleado->ObtenerNombre() + empleado->ObtenerApellido() << empleado->ObtenerNombreCompletoSupervisor() << empleado->CalcularPagoNeto() << endl;
+    }
+}
+
 
 Planilla::~Planilla()
 {

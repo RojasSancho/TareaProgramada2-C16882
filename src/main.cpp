@@ -52,7 +52,7 @@ int main ()
     Planilla *planilla = new Planilla(&ifs);
     planilla->AgregarPagoMensualBruto(&ifs2);
     planilla->AgregarMontoPorHoraYHorasTrabajadas(&ifs3);
-
+    planilla->CrearReporte();
     
     
 

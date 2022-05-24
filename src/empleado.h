@@ -34,6 +34,8 @@ class Empleado {
     void AsigneSupervisor(Empleado *supervisor);
 
     string ObtenerNombre();
+    string ObtenerApellido();
+    string ObtenerNombreCompletoSupervisor();
 
     virtual void AsignarPagoMensualBruto(float pagoMensualBruto);
     virtual void AsignarMontoPorHoraYHorasTrabajadas(float montoPorHora, int horasTrabajadas);
