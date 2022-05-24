@@ -36,8 +36,10 @@ class Empleado {
     string ObtenerNombre();
     string ObtenerApellido();
     string ObtenerNombreCompletoSupervisor();
+    int ObtenerTipo();
 
     virtual void AsignarPagoMensualBruto(float pagoMensualBruto);
+    virtual float ObtenerPagoMensualBruto();
     virtual void AsignarMontoPorHoraYHorasTrabajadas(float montoPorHora, int horasTrabajadas);
 
 };

@@ -17,7 +17,7 @@ class EmpleadoNomina : public Empleado {
     EmpleadoNomina(float pagoMensualBruto);
 
     virtual float CalcularPagoNeto();
-
+    float ObtenerPagoMensualBruto();
     void AsignarPagoMensualBruto(float pagoMensualBruto);
 
 };

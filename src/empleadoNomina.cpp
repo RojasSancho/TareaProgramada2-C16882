@@ -34,3 +34,8 @@ void EmpleadoNomina::AsignarPagoMensualBruto(float pagoMensualBruto)
 {
     this->pagoMensualBruto = pagoMensualBruto;
 }
+
+float EmpleadoNomina::ObtenerPagoMensualBruto() 
+{
+    return this->pagoMensualBruto;
+}

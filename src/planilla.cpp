@@ -122,8 +122,33 @@ void Planilla::CrearReporte()
     for(int i = 1; i <= 600; i++)
     {
         Empleado *empleado = this->indiceEmpleados.at(i);
-        reporte << i << empleado->ObtenerNombre() + empleado->ObtenerApellido() << empleado->ObtenerNombreCompletoSupervisor() << empleado->CalcularPagoNeto() << endl;
+        reporte << i  << "," << empleado->ObtenerNombre() + " " + empleado->ObtenerApellido() << "," << empleado->ObtenerNombreCompletoSupervisor() << "," << empleado->CalcularPagoNeto() << endl;
     }
+
+
+    long double subtotal{};
+    long double totalImpuestosARetener{};
+    long double total{};
+    for(int i = 1; i <= 600; i++)
+    {
+        Empleado *empleado = this->indiceEmpleados.at(i);
+        if((empleado->ObtenerTipo()) == 1) 
+        {
+            subtotal = subtotal + empleado->CalcularPagoNeto();
+            totalImpuestosARetener = totalImpuestosARetener + (empleado->ObtenerPagoMensualBruto() * 0.07);
+            total = total + empleado->ObtenerPagoMensualBruto();
+
+        } else if((empleado->ObtenerTipo()) == 2 ) {
+            subtotal = subtotal + empleado->CalcularPagoNeto();
+            total = total + empleado->CalcularPagoNeto();
+        }
+
+
+    }
+
+    reporte << endl << subtotal << "," << totalImpuestosARetener << "," << total << endl;
+
+    reporte.close();
 }
 
 
