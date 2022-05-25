@@ -17,12 +17,14 @@ class Planilla {
     public:
     Planilla(istream *streamPersonas); //Informacion de la raiz, es decir, el director
 
-    ~Planilla();
+    
 
     void AgregarPagoMensualBruto(istream *streamNomina); //Agregar informacion de empleados de nomina(nomina.txt)
     void AgregarMontoPorHoraYHorasTrabajadas(istream *streamHorasTrabajadas); //Agragar informacion de empleados por hora(horastrabajadas.txt)
     void CrearReporte();
 
+    ~Planilla();
+    
     string ObtenerNombre(int id);
     float ObtenerPagoNeto(int id);
 
