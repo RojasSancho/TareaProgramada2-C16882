@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 
 Planilla::Planilla(istream *streamPersonas)
 {
@@ -145,8 +146,8 @@ void Planilla::CrearReporte()
 
 
     }
-
-    reporte << endl << subtotal << "," << totalImpuestosARetener << "," << total << endl;
+    reporte << endl << "Subtotal" << "," << "Impuestos a retener" << "," << "Total" << endl;
+    reporte << setprecision(2) << fixed << subtotal << "," << totalImpuestosARetener << "," << total << endl;
 
     reporte.close();
 }
